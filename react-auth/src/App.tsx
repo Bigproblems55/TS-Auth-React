@@ -8,7 +8,7 @@ import ProtectedPage from "./ProtectedPage";
 import { useAuth0 } from "@auth0/auth0-react";
 import ProfilePage from "./ProfilePage";
 import withAuthGuard from "./AuthenticationGuard";
-
+import ContentPage from "./ContentPage";
 const GuardedProfilePage = withAuthGuard(ProfilePage);
 const GuardedProtectedPage = withAuthGuard(ProtectedPage);
 
@@ -23,6 +23,7 @@ const App: React.FC = () => {
       <Route path="/" element={<HomePage />} />
       <Route path="/profile" element={<GuardedProfilePage />} />
       <Route path="/protected" element={<GuardedProtectedPage />} />
+      <Route path="/content" element={<ContentPage />}/>
       <Route path="/callback" element={<CallbackPage />} />
     </Routes>
   );
